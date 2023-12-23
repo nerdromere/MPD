@@ -1,8 +1,8 @@
-export default function ContactMe() {
+export default function ContactMe({ multiplier }) {
   return (
     <section id="Contact" className="contact--section">
       <div>
-        <h1 className="skills-section--heading">Join Me</h1>
+        <h1 className="skills-section--heading">Join Me on This Adventure!</h1>
       </div>
       <form className="contact--form--container">
         <div className="container">
@@ -60,6 +60,7 @@ export default function ContactMe() {
             <span className="text-md">Multiplier</span>
             <input
               disabled
+              value={`${multiplier}x`}
               type="text"
               className="multiplier--input text-md"
               name="multiplier"
@@ -91,10 +92,10 @@ export default function ContactMe() {
           <input type="checkbox" required name="checkbox" id="checkbox" />
           <span className="text-sm">I accept the terms</span>
         </label> */}
+        <p style={{ fontSize: "2vh", textAlign: "center" }}>(For security purposes, dashboard access will be provided only to those who I talk to in person, or get referred by someone who has already signed up)</p>
         <div>
           <button className="btn btn-primary contact--form--btn">Submit</button>
         </div>
-        <p style={{ fontSize: "2vh", textAlign: "center" }}>(For security purposes, dashboard access will be provided only to those who I talk to in person, or get referred by someone who has already signed up)</p>
 
       </form>
     </section>

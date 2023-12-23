@@ -1,7 +1,7 @@
 
-export default function MySkills() {
+export default function MyJourney() {
   return (
-    <section className="skills--section" id="mySkills">
+    <section className="skills--section" id="myJourney">
       <div className="portfolio--container">
         {/* <p className="section--title">My Skills</p> */}
         <h2 className="skills--section--heading">My Journey</h2>

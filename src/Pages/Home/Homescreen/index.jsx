@@ -3,18 +3,22 @@ import ContactMe from "../ContactMe";
 import Footer from "../Footer";
 import HeroSection from "../HeroSection";
 import MyPortfolio from "../MyPortfolio";
-import MySkills from "../MySkills";
+import MyJourney from "../MyJourney";
 import Testimonial from "../Testimonials";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [multiplier, setMultiplier] = useState(1);
+
   return (
     <>
       <HeroSection />
-      <MySkills />
-      <TheAsk />
+      <MyJourney />
+      <TheAsk setMultiplierParent={setMultiplier} />
       {/* <MyPortfolio />
       <Testimonial /> */}
-      <ContactMe />
+      <ContactMe multiplier={multiplier} />
       <Footer />
     </>
   );

@@ -69,7 +69,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="MyPortfolio"
+              to="myJourney"
               className="navbar--content"
             >
               Journey
