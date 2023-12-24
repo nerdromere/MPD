@@ -1,10 +1,25 @@
-export default function ContactMe({ multiplier }) {
+import { useState } from "react";
+
+export default function ContactMe({ multiplierParent }) {
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [zipCode, setZipCode] = useState('');
+  // const [multiplier, setMultiplier] = useState('1x');
+  const [saintOrReferrer, setSaintOrReferrer] = useState('');
+
+  const [clickedButton, setClickedButton] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
 
   const handleSubmit = (e) => {
+    setClickedButton(true);
     e.preventDefault();
     const formElement = document.getElementById("form");
     const formData = new FormData(formElement);
-    formData.append('multiplier', multiplier);
+    formData.append('multiplier', multiplierParent);
     // for (var pair of formData.entries()) {
     //   console.log(pair[0] + ', ' + pair[1]);
     // }
@@ -17,7 +32,13 @@ export default function ContactMe({ multiplier }) {
         console.log("Error...")
       })
       .then(res => {
-        console.log("Success...")
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setPhoneNumber('');
+        setZipCode('');
+        setSaintOrReferrer('');
+        setSubmitted(true);
         //set success and clear all values
       })
       .finally(fin => {
@@ -40,6 +61,8 @@ export default function ContactMe({ multiplier }) {
               className="contact--input text-md"
               name="firstName"
               id="firstName"
+              value={firstName}
+              onChange={e => setFirstName(e.target.value)}
               required
             />
           </label>
@@ -50,6 +73,8 @@ export default function ContactMe({ multiplier }) {
               className="contact--input text-md"
               name="lastName"
               id="lastName"
+              value={lastName}
+              onChange={e => setLastName(e.target.value)}
               required
             />
           </label>
@@ -60,6 +85,8 @@ export default function ContactMe({ multiplier }) {
               className="contact--input text-md"
               name="email"
               id="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               required
             />
           </label>
@@ -70,6 +97,8 @@ export default function ContactMe({ multiplier }) {
               className="contact--input text-md"
               name="phoneNumber"
               id="phoneNumber"
+              value={phoneNumber}
+              onChange={e => setPhoneNumber(e.target.value)}
               required
             />
           </label>
@@ -80,6 +109,8 @@ export default function ContactMe({ multiplier }) {
               className="contact--input text-md"
               name="zipCode"
               id="zipCode"
+              value={zipCode}
+              onChange={e => setZipCode(e.target.value)}
               required
             />
           </label>
@@ -87,7 +118,7 @@ export default function ContactMe({ multiplier }) {
             <span className="text-md">Multiplier (changeable)</span>
             <input
               disabled
-              value={`${multiplier}x`}
+              value={`${multiplierParent}x`}
               type="text"
               className="multiplier--input text-md"
               name="multiplier"
@@ -103,6 +134,8 @@ export default function ContactMe({ multiplier }) {
             className="contact--input text-md"
             name="saintOrReferrer"
             id="saintOrReferrer"
+            value={saintOrReferrer}
+            onChange={e => setSaintOrReferrer(e.target.value)}
             required
           />
         </label>
@@ -121,7 +154,7 @@ export default function ContactMe({ multiplier }) {
         </label> */}
         <p style={{ fontSize: "2vh", textAlign: "center" }}>(For security purposes, dashboard access will be provided only to those who I talk to in person, or get referred by someone who has already signed up)</p>
         <div>
-          <input className="btn btn-primary contact--form--btn" type="submit" />
+          <input className="btn btn-primary contact--form--btn" type="submit" disabled={clickedButton} value={submitted ? "Successfully Submitted!" : "Submit"} />
         </div>
 
       </form>

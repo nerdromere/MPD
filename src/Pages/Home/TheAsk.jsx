@@ -126,7 +126,7 @@ export default function TheAsk({ setMultiplierParent }) {
           <p className="hero--section-description">
             The ideal time to launch is after the 2024 election, and the ideal time to start the full-time training is <b><u>now</u></b>. Even though I love my software engineering job, and it will be bittersweet to leave, there is much more at stake. If you want this to come to fruition, please consider supporting me financially by filling out the form below and I’ll set up a call with you to answer questions.
           </p>
-          <p className="hero--section-description">
+          <div className="hero--section-description">
             What you will get:
             <ul>
               <li>A passionate pro-lifer on the field, motivated with love for the unborn and their parents.</li>
@@ -137,7 +137,7 @@ export default function TheAsk({ setMultiplierParent }) {
               <li>The inside scoop on what is yet to be revealed such as the name and what else we are building.</li>
             </ul>
             Before joining the church, I thought I could do this alone; but not only can I not do this alone, but I <b><u>ought not</u></b>.
-          </p>
+          </div>
         </div>
       </div>
       <div className="about--section--img">

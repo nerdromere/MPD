@@ -18,7 +18,7 @@ export default function Home() {
       <TheAsk setMultiplierParent={setMultiplier} />
       {/* <MyPortfolio />
       <Testimonial /> */}
-      <ContactMe multiplier={multiplier} />
+      <ContactMe multiplierParent={multiplier} />
       <Footer />
     </>
   );
