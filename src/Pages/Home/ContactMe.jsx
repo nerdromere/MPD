@@ -1,28 +1,55 @@
 export default function ContactMe({ multiplier }) {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formElement = document.getElementById("form");
+    const formData = new FormData(formElement);
+    formData.append('multiplier', multiplier);
+    // for (var pair of formData.entries()) {
+    //   console.log(pair[0] + ', ' + pair[1]);
+    // }
+
+    fetch("https://script.google.com/macros/s/AKfycbwY0T3HATY0UCapR3oI-mO7nd4A4PvBe3T9eSrrLBbnhioDVARuwVganE3fxih60E67/exec", {
+      method: "POST",
+      body: formData
+    })
+      .catch(e => {
+        console.log("Error...")
+      })
+      .then(res => {
+        console.log("Success...")
+        //set success and clear all values
+      })
+      .finally(fin => {
+
+      })
+
+  }
+
   return (
     <section id="Contact" className="contact--section">
       <div>
         <h1 className="skills-section--heading">Join Me on This Adventure!</h1>
       </div>
-      <form className="contact--form--container">
+      <form id="form" className="contact--form--container" onSubmit={handleSubmit}>
         <div className="container">
-          <label htmlFor="first-name" className="contact--label">
+          <label htmlFor="firstName" className="contact--label">
             <span className="text-md">First Name</span>
             <input
               type="text"
               className="contact--input text-md"
-              name="first-name"
-              id="first-name"
+              name="firstName"
+              id="firstName"
               required
             />
           </label>
-          <label htmlFor="last-name" className="contact--label">
+          <label htmlFor="lastName" className="contact--label">
             <span className="text-md">Last Name</span>
             <input
               type="text"
               className="contact--input text-md"
-              name="last-name"
-              id="last-name"
+              name="lastName"
+              id="lastName"
               required
             />
           </label>
@@ -36,28 +63,28 @@ export default function ContactMe({ multiplier }) {
               required
             />
           </label>
-          <label htmlFor="phone-number" className="contact--label">
+          <label htmlFor="phoneNumber" className="contact--label">
             <span className="text-md">Phone Number</span>
             <input
               type="tel"
               className="contact--input text-md"
-              name="phone-number"
-              id="phone-number"
+              name="phoneNumber"
+              id="phoneNumber"
               required
             />
           </label>
-          <label htmlFor="zip-code" className="contact--label">
+          <label htmlFor="zipCode" className="contact--label">
             <span className="text-md">Zip Code</span>
             <input
               type="text"
               className="contact--input text-md"
-              name="zip-code"
-              id="zip-code"
+              name="zipCode"
+              id="zipCode"
               required
             />
           </label>
           <label htmlFor="multiplier" className="contact--label">
-            <span className="text-md">Multiplier</span>
+            <span className="text-md">Multiplier (changeable)</span>
             <input
               disabled
               value={`${multiplier}x`}
@@ -69,13 +96,13 @@ export default function ContactMe({ multiplier }) {
             />
           </label>
         </div>
-        <label htmlFor="saint-name" className="contact--label">
+        <label htmlFor="saintOrReferrer" className="contact--label">
           <span className="text-md">Saint name on the card I provided or whoever referred you</span>
           <input
             type="text"
             className="contact--input text-md"
-            name="saint-name"
-            id="saint-name"
+            name="saintOrReferrer"
+            id="saintOrReferrer"
             required
           />
         </label>
@@ -94,7 +121,7 @@ export default function ContactMe({ multiplier }) {
         </label> */}
         <p style={{ fontSize: "2vh", textAlign: "center" }}>(For security purposes, dashboard access will be provided only to those who I talk to in person, or get referred by someone who has already signed up)</p>
         <div>
-          <button className="btn btn-primary contact--form--btn">Submit</button>
+          <input className="btn btn-primary contact--form--btn" type="submit" />
         </div>
 
       </form>

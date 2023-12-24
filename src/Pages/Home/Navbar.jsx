@@ -35,7 +35,7 @@ function Navbar() {
   return (
     <nav className={`navbar ${navActive ? "active" : ""}`}>
       <div>
-        <img src="./img/logo.svg" alt="Logoipsum" />
+        <img src="./img/sacred-heart.png" alt="Logoipsum" style={{ width: "5vh" }} />
       </div>
       <a
         className={`nav__hamburger ${navActive ? "active" : ""}`}
@@ -97,7 +97,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="testimonial"
+              to="Contact"
               className="navbar--content"
             >
               Join Me
@@ -115,7 +115,7 @@ function Navbar() {
         to="Contact"
         className="btn btn-outline-primary"
       >
-        Contact Me
+        Together!
       </Link>
     </nav>
   );

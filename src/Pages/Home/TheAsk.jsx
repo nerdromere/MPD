@@ -131,10 +131,10 @@ export default function TheAsk({ setMultiplierParent }) {
             <ul>
               <li>A passionate pro-lifer on the field, motivated with love for the unborn and their parents.</li>
               <li>360° video of every cardio training (biking, running, rowing).</li>
-              <li>Access to a dashboard with daily updates of my comments, workouts, books read, courses completed, and talks/tabling events.</li>
+              <li>Access to a dashboard with daily updates of my comments, month to day mileage, books read, courses completed, and talks/tabling events.</li>
               <li>To become an early supporter of, what I believe to be, the next big push in the pro-life movement.</li>
               <li>An opportunity to impact thousands around you shortly after launch; more to be discussed a few months in. There is a specific task in mind.</li>
-              <li>The inside scoop on much more yet to be revealed such as the name and what else we are building.</li>
+              <li>The inside scoop on what is yet to be revealed such as the name and what else we are building.</li>
             </ul>
             Before joining the church, I thought I could do this alone; but not only can I not do this alone, but I <b><u>ought not</u></b>.
           </p>
@@ -152,11 +152,12 @@ export default function TheAsk({ setMultiplierParent }) {
             min={1} max={20}
             // marks={["marks"]}
             valueLabelDisplay="on"
+            valueLabelFormat={value => value + `x`}
             onChange={handleChange}
           />
         </div>
         <h2>Multiplier</h2>
-        <div className="hero--section-description">
+        <div className="funding-values">
           <p>Support me my donating per mile of biking, running or rowing:</p>
           <p>Biking: {formatter.format(0.01 * multiplier)}/mile</p>
           <p>Running: {formatter.format(0.03 * multiplier)}/mile</p>
