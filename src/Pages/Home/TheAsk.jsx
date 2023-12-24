@@ -165,7 +165,7 @@ export default function TheAsk({ setMultiplierParent }) {
         </div>
         <div className="hero--section-description">
           <br />The financial support will be tied to my training to make sure I stay on track and avoid injury. Training will begin with non-impact sports such as biking and rowing to avoid injury, and transition to running closer to launch date.
-          <br /><br />Please note that there is much that can go wrong such as injury. It is possible that I will need to take more breaks, therefore less mileage per month.
+          <br /><br />Please note that this is a projected training plan, and does not account for injury. It is possible that I will need to take more breaks, therefore less mileage per month.
         </div>
       </div>
     </section>

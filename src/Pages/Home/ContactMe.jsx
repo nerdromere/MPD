@@ -115,7 +115,7 @@ export default function ContactMe({ multiplierParent }) {
             />
           </label>
           <label htmlFor="multiplier" className="contact--label">
-            <span className="text-md">Multiplier (changeable)</span>
+            <span className="text-md">Multiplier</span>
             <input
               disabled
               value={`${multiplierParent}x`}
