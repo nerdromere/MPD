@@ -127,7 +127,7 @@ export default function TheAsk({ setMultiplierParent }) {
             The ideal time to launch is after the 2024 election, and the ideal time to start the full-time training is <b><u>now</u></b>. Even though I love my software engineering job, and it will be bittersweet to leave, there is much more at stake. If you want this to come to fruition, please consider supporting me financially by filling out the form below and I’ll set up a call with you to answer questions.
           </p>
           <div className="hero--section-description">
-            What you will get:
+            What a 1x multiplier comes with:
             <ul>
               <li>A passionate pro-lifer on the field, motivated with love for the unborn and their parents.</li>
               <li>360° video of every cardio training (biking, running, rowing).</li>

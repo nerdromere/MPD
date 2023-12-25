@@ -7,7 +7,7 @@ export default function ContactMe({ multiplierParent }) {
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [zipCode, setZipCode] = useState('');
-  // const [multiplier, setMultiplier] = useState('1x');
+  const [cantDonate, setCantDonate] = useState(false);
   const [saintOrReferrer, setSaintOrReferrer] = useState('');
 
   const [clickedButton, setClickedButton] = useState(false);
@@ -19,7 +19,7 @@ export default function ContactMe({ multiplierParent }) {
     e.preventDefault();
     const formElement = document.getElementById("form");
     const formData = new FormData(formElement);
-    formData.append('multiplier', multiplierParent);
+    formData.append('multiplier', cantDonate ? '0' : multiplierParent);
     // for (var pair of formData.entries()) {
     //   console.log(pair[0] + ', ' + pair[1]);
     // }
@@ -50,7 +50,7 @@ export default function ContactMe({ multiplierParent }) {
   return (
     <section id="Contact" className="contact--section">
       <div>
-        <h1 className="skills-section--heading">Join Me on This Adventure!</h1>
+        <h1 className="skills-section--heading">Join Me on This Mission!</h1>
       </div>
       <form id="form" className="contact--form--container" onSubmit={handleSubmit}>
         <div className="container">
@@ -115,10 +115,10 @@ export default function ContactMe({ multiplierParent }) {
             />
           </label>
           <label htmlFor="multiplier" className="contact--label">
-            <span className="text-md">Multiplier</span>
+            <span className="text-md" style={{ textDecoration: cantDonate ? "line-through" : "none" }}>Multiplier</span>
             <input
               disabled
-              value={`${multiplierParent}x`}
+              value={cantDonate ? '0x' : `${multiplierParent}x`}
               type="text"
               className="multiplier--input text-md"
               name="multiplier"
@@ -127,6 +127,10 @@ export default function ContactMe({ multiplierParent }) {
             />
           </label>
         </div>
+        <label htmlFor="checkbox" className="checkbox--label">
+          <input type="checkbox" name="checkbox" id="checkbox" checked={cantDonate} onChange={e => setCantDonate(!cantDonate)} />
+          <span className="text-sm">Can't financially support at this time, but I want to help.</span>
+        </label>
         <label htmlFor="saintOrReferrer" className="contact--label">
           <span className="text-md">Saint name on the card I provided or whoever referred you</span>
           <input
@@ -147,10 +151,6 @@ export default function ContactMe({ multiplierParent }) {
             rows="8"
             placeholder="Type your message..."
           />
-        </label>
-        <label htmlFor="checkboc" className="checkbox--label">
-          <input type="checkbox" required name="checkbox" id="checkbox" />
-          <span className="text-sm">I accept the terms</span>
         </label> */}
         <p style={{ fontSize: "2vh", textAlign: "center" }}>(For security purposes, dashboard access will be provided only to those who I talk to in person, or get referred by someone who has already signed up)</p>
         <div>
