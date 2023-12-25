@@ -105,7 +105,7 @@ export default function ContactMe({ multiplierParent }) {
           <label htmlFor="zipCode" className="contact--label">
             <span className="text-md">Zip Code</span>
             <input
-              type="text"
+              type="number"
               className="contact--input text-md"
               name="zipCode"
               id="zipCode"
@@ -132,7 +132,7 @@ export default function ContactMe({ multiplierParent }) {
           <span className="text-sm">Can't financially support at this time, but I want to help.</span>
         </label>
         <label htmlFor="saintOrReferrer" className="contact--label">
-          <span className="text-md">Saint name on the card I provided or whoever referred you</span>
+          <span className="text-md">Saint name on the card I provided or whoever referred you if we haven't spoken yet</span>
           <input
             type="text"
             className="contact--input text-md"
