@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/MPD/static/css/main.a73021c4.css",
-    "main.js": "/MPD/static/js/main.1e6dc123.js",
-    "index.html": "/MPD/index.html",
-    "main.a73021c4.css.map": "/MPD/static/css/main.a73021c4.css.map",
-    "main.1e6dc123.js.map": "/MPD/static/js/main.1e6dc123.js.map"
+    "main.css": "/static/css/main.a73021c4.css",
+    "main.js": "/static/js/main.1e6dc123.js",
+    "index.html": "/index.html",
+    "main.a73021c4.css.map": "/static/css/main.a73021c4.css.map",
+    "main.1e6dc123.js.map": "/static/js/main.1e6dc123.js.map"
   },
   "entrypoints": [
     "static/css/main.a73021c4.css",
