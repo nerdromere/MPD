@@ -8,7 +8,8 @@ import {
   Title,
   Tooltip,
   Legend,
-  Filler
+  Filler,
+  L
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { Slider } from '@mui/material';
@@ -82,6 +83,9 @@ const StackedLineGraph = ({ donations, multiplier }) => {
       title: {
         display: true,
         text: 'Estimated Training Plan'
+      },
+      legend: {
+        onClick: null
       }
     },
     scales: {
@@ -96,6 +100,12 @@ const StackedLineGraph = ({ donations, multiplier }) => {
         title: {
           display: true,
           text: 'Total Monthly Donation'
+        },
+        ticks: {
+          // Include a dollar sign in the ticks
+          callback: function (value, index, ticks) {
+            return '$' + value;
+          }
         }
       }
     }
@@ -124,7 +134,7 @@ export default function TheAsk({ setMultiplierParent }) {
         <div className="hero--section--content">
           <h1 className="skills-section--heading">The Ask</h1>
           <p className="hero--section-description">
-            The ideal time to launch is after the 2024 election, and the ideal time to start the full-time training is <b><u>now</u></b>. Even though I love my software engineering job, and it will be bittersweet to leave, there is much more at stake. If you want this to come to fruition, please consider supporting me financially by filling out the form below and I’ll set up a call with you to answer questions.
+            The ideal time to launch is after the 2024 election, and the ideal time to start the full-time training is <b><u>now</u></b>. Even though I love my software engineering job, and it will be bittersweet to leave, there is much more at stake. If you want this to come to fruition, please consider supporting me by filling out the form below and I’ll set up a call with you to answer questions.
           </p>
           <div className="hero--section-description">
             What a 1x multiplier comes with:
@@ -164,7 +174,7 @@ export default function TheAsk({ setMultiplierParent }) {
           <p>Rowing: {formatter.format(0.05 * multiplier)}/mile</p>
         </div>
         <div className="hero--section-description">
-          <br />The financial support will be tied to my training to make sure I stay on track and avoid injury. Training will begin with non-impact sports such as biking and rowing to avoid injury, and transition to running closer to launch date.
+          <br />The financial support will be tied to my training to make sure I stay on track and avoid injury. Training will begin with non-impact training such as biking and rowing to avoid injury, and transition to running closer to launch date.
           <br /><br />Please note that this is a projected training plan, and does not account for injury. It is possible that I will need to take more breaks, therefore less mileage per month.
         </div>
       </div>

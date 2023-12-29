@@ -19,12 +19,13 @@ export default function ContactMe({ multiplierParent }) {
     e.preventDefault();
     const formElement = document.getElementById("form");
     const formData = new FormData(formElement);
+    formData.append('date', new Date().toISOString());
     formData.append('multiplier', cantDonate ? '0' : multiplierParent);
     // for (var pair of formData.entries()) {
     //   console.log(pair[0] + ', ' + pair[1]);
     // }
 
-    fetch("https://script.google.com/macros/s/AKfycbwY0T3HATY0UCapR3oI-mO7nd4A4PvBe3T9eSrrLBbnhioDVARuwVganE3fxih60E67/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxkc-BBDC_0f1zCYRtwbuPLXYo5TgqBDaIk7i69-aZSU9qWfSu5MmRT6O7hmJp_elTu/exec", {
       method: "POST",
       body: formData
     })
@@ -115,7 +116,7 @@ export default function ContactMe({ multiplierParent }) {
             />
           </label>
           <label htmlFor="multiplier" className="contact--label">
-            <span className="text-md" style={{ textDecoration: cantDonate ? "line-through" : "none" }}>Multiplier</span>
+            <span className="text-md" style={{ textDecoration: cantDonate ? "line-through" : "none" }}>Multiplier (configure above)</span>
             <input
               disabled
               value={cantDonate ? '0x' : `${multiplierParent}x`}
@@ -132,7 +133,7 @@ export default function ContactMe({ multiplierParent }) {
           <span className="text-sm">Can't financially support at this time, but I want to help.</span>
         </label>
         <label htmlFor="saintOrReferrer" className="contact--label">
-          <span className="text-md">Saint name on the card I provided or whoever referred you if we haven't spoken yet</span>
+          <span className="text-md">Saint name on the card I provided or whoever referred you if we haven't spoken yet :)</span>
           <input
             type="text"
             className="contact--input text-md"
