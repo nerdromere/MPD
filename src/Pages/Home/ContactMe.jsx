@@ -157,7 +157,9 @@ export default function ContactMe({ multiplierParent }) {
         <div>
           <input className="btn btn-primary contact--form--btn" type="submit" disabled={clickedButton} value={submitted ? "Successfully Submitted!" : "Submit"} />
         </div>
-
+        <div className="hero--section-description">
+          "Greater love has no man than this, that a man lay down his life for his friends." (John 15:13)
+        </div>
       </form>
     </section>
   );
