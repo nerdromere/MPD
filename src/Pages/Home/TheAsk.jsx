@@ -168,7 +168,7 @@ export default function TheAsk({ setMultiplierParent }) {
         </div>
         <h2>Multiplier</h2>
         <div className="funding-values">
-          <p>Support me my donating per mile of biking, running or rowing:</p>
+          <p>Support me by donating per mile of biking, running or rowing:</p>
           <p>Biking: {formatter.format(0.01 * multiplier)}/mile</p>
           <p>Running: {formatter.format(0.03 * multiplier)}/mile</p>
           <p>Rowing: {formatter.format(0.05 * multiplier)}/mile</p>
